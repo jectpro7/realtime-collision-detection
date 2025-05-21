@@ -1,7 +1,24 @@
-## Manus generated project
-query:
+# 实时分布式碰撞检测系统
+## 项目简介
+本项目为一个高性能、分布式的实时碰撞检测系统，适用于大规模动态对象（如自动驾驶车辆、无人机群等）的碰撞风险预测与预警。系统集成了空间索引、分布式任务调度、消息通信、高可用与灾备、负载均衡等多种能力，支持横向扩展和高可靠性运行。
 
-> I need to use python to implement a distributed realtime computation platform, which is able to handle 10000+ TPS with limited resource, and P99 latency should less than 100ms including access external databases. 
-> It also need to provide HA, disaster recovering, failover, throttling etc, making it as reliable as possible. 
-> 
-> Base on the platform, implement an 3D risk analysis system to detect any potential collision. For example, all electric car will report their location every second, and run some collision detection algorithm with location reported by other car. So the latency should be very fast before the collison happened, and the throughput could be high since traffic could be terrible during rush hour. And the data is extremely skew, there are many cars in the city, but no car in some remote place.
+## 主要功能
+实时碰撞检测与预测：基于空间索引和高效算法，支持大规模对象的实时碰撞检测与风险预测。
+分布式架构：支持多节点协同计算，具备任务调度、分片、负载均衡能力。
+高可用与灾备：内置心跳监控、主备切换、状态备份与恢复、故障转移与限流等机制。
+消息通信：基于消息代理实现节点间高效通信与任务分发。
+API 服务：对外提供标准化接口，支持数据接入、查询与告警推送。
+可扩展性与易用性：模块化设计，便于功能扩展与二次开发。
+
+## 目录结构
+src/
+├── api/                # API 服务相关代码
+├── collision/          # 碰撞检测、空间索引、分片与预警
+├── common/             # 通用数据结构与工具
+├── compute/            # 计算节点实现
+├── messaging/          # 消息通信模块
+├── reliability/        # 高可用、灾备、故障转移
+├── scheduler/          # 任务调度
+├── storage/            # 存储管理
+├── test/               # 测试与性能评测工具
+└── collision_system.py # 系统集成主入口

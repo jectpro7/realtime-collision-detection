@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/home/ubuntu/distributed_platform/code/collision_system.py", line 11, in <module>
-    from common.models import Position, Vector, Vehicle, CollisionRisk, Alert, NodeInfo, LoadMetrics
-ModuleNotFoundError: No module named 'common'
